@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+// NOT USED
 @Slf4j
 @Component
 public class MngApiFilter  extends AbstractGatewayFilterFactory<Config> {
