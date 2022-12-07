@@ -105,7 +105,12 @@ public class ApiFilter extends AbstractGatewayFilterFactory<Config> {
       String host = request.getHeaders().getOrigin(); // 없을 수도 있다.
 
       if (host != null) {
-        validateDomains(config, siteId, host.substring(0, host.length()-1)); // 마지막 문자 '/' 제거
+        if (host.contains(":")) {
+          host = host.substring(0, host.indexOf(":"));
+          validateDomains(config, siteId, host);
+        } else {
+          validateDomains(config, siteId, host);  // host.substring(0, host.length() - 1)); // 마지막 문자 '/' 제거
+        }
       }else {
         throw new GatewayException(ErrorCode.INVALID_ORIGIN_DOMAIN);
       }
