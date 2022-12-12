@@ -65,6 +65,8 @@ public class ApiFilter extends AbstractGatewayFilterFactory<Config> {
           { "/api/v1/mng/lrc/lrcmanagement/project/user-account/{projectId}", "POST" },
           { "/api/v1/mng/lrc/lrcmanagement/project/user-account/{projectId}/{id}", "DELETE" },
           { "/api/v1/mng/lrc/lrcmanagement/project/user-accounts/{projectId}", "POST" },
+          { "/api/v1/mng/cpc/education/unmasking", "GET"},
+          { "/api/v1/mng/cpc/education/{id}/unmasking", "GET"},
           { "/api/v1/lrc/files/*", "ALL" },
           { "/api/v1/cpc/*", "ALL" },
           { "/api/v1/lrc/*", "ALL" },
